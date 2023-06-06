@@ -3,17 +3,15 @@ import Cita from './cita';
 
 const ListadoCitas = ({ citas }) => {
   return (
-    <div>
-      <h2>Listado de citas</h2>
-      {citas.length === 0 ? (
-        <p>No hay citas</p>
-      ) : (
+    <div className='one-half column'>
+      <h2>Administra tus citas</h2>
+: (
         <ul>
           {citas.map((cita) => (
             <Cita key={cita.id} cita={cita} eliminarCita={eliminarCita} />
           ))}
         </ul>
-      )}
+      )
     </div>
   );
 };

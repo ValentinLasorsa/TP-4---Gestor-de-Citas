@@ -1,27 +1,55 @@
 import { useState } from 'react';
-import Formulario from './components/formulario';
-import ListadoCitas from './components/listadoCitas';
+import Formulario from './components/Formulario';
+import ListadoCitas from './components/ListadoCitas';
 
 function App (){
-  const [citas, setCitas] = useState([]);
-  const [error, setError] = useState('');
+  const array = [
+    {id:1,mascota:'Morena',duenio:'Brenda',date:'2017-12-31',time:'09:00',sintoms:'Control'}
+  ]
+  const [listaCitas, setListaCitas] = useState(array);
+  const agregarCita = e => {
+    e.preventDefault();
+    setListaCitas(
+      [
+        ...listaCitas,
+        {
+          id :      e.target.id.value,
+          mascota:   e.target.mascota.value,
+          duenio:    e.target.duenio.value,
+          date:     e.target.fecha.value,
+          time:     e.target.hora.value,
+          sintoms:  e.target.sintomas.value
+        }
+      ]
+  );
+  }
 
-  const agregarCita = (nuevaCita) => {
-    setCitas([...citas, nuevaCita]);
+  function eliminarCita(idCita){
+    const updatedLista = listaCitas.filter(cita => cita.id !== idCita);
+    setListaCitas(updatedLista);
   };
 
-  function eliminarCita() {
-    const nuevasCitas = citas.filter((cita) => cita.id !== id);
-    setCitas(nuevasCitas);
-  };
   return (
-    <div>
-      <h1>Gestor de Citas</h1>
-      <Formulario agregarCita={agregarCita} />
-      {error && <Error mensaje={error} />}
-      <ListadoCitas citas={citas} eliminarCita={eliminarCita} />
+    <div id='root'>
+       <h1>ADMINISTRADOR DE PACIENTES</h1>
+      <div className="container">
+        <div className="row">
+          <div className="one-half column">
+            <h3>Crear mi Cita</h3>
+          <form onSubmit={(e) => agregarCita(e)}>
+            <Formulario listaCitas={listaCitas} agregarCita={agregarCita}/>
+          </form>            
+          </div>
+          <div className="one-half column">
+          <h3>Administra tus citas</h3>
+            <div>
+              <listadoCitas listadoCitas={listaCitas} eliminar={eliminarCita}/>
+            </div>
+          </div>
+        </div>
+      </div> 
     </div>
   );
-};
+}
 
 export default App;

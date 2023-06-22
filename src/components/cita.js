@@ -1,21 +1,16 @@
-import React from 'react';
+import React from 'react'
 
-const Cita = ({ cita, eliminarCita }) => {
-    const handleEliminarCita = () => {
-      eliminarCita(cita.id);
-    };
-  return (
-    <li>
-      <p>
-        <span>Mascota: {cita.nombreMascota}</span>
-        <span>Dueño: {cita.nombreDuenio}</span>
-        <span>Fecha: {cita.fecha}</span>
-        <span>Hora: {cita.hora}</span>
-        <span>Sintomas: {cita.sintomas}</span>
-      </p>
-      <button onClick={handleEliminarCita}>Eliminar</button>
-    </li>
-  );
-};
+export default function Citas({cita,eliminar} ) {
 
-export default Cita;
+        return (
+          <div className="cita">
+            <span id='ID-lista'>{cita.id}</span>
+            <p>Mascota: <span>{cita.mascot}</span></p>
+            <p>Dueño: <span>{cita.duenio}</span></p>
+            <p>Fecha: <span>{cita.date}</span></p>
+            <p>Hora: <span>{cita.time}</span></p>
+            <p>Sintomas: <span>{cita.sintoms}</span></p>
+            <button className="button-eliminar u-full-width" onClick={() => eliminar(cita.id)}>Eliminar ×</button>
+        </div>
+    )
+}

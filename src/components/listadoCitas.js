@@ -1,19 +1,14 @@
-import React from 'react';
-import Cita from './cita';
+import React from 'react'
+import Cita from './Cita'
 
-const ListadoCitas = ({ citas }) => {
+export default function listadoCitas({listadoCitas, eliminar}) {
   return (
-    <div className='one-half column'>
-      <h2>Administra tus citas</h2>
-: (
-        <ul>
-          {citas.map((cita) => (
-            <Cita key={cita.id} cita={cita} eliminarCita={eliminarCita} />
+    <>
+        {listadoCitas.map((item)=>(
+            <div key={item.id} className="col-3  margin-top">
+                <Cita cita={item} eliminar={eliminar}/>
+            </div>          
           ))}
-        </ul>
-      )
-    </div>
-  );
-};
-
-export default ListadoCitas;
+    </>
+  )
+}

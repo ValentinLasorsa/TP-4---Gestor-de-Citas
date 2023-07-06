@@ -1,10 +1,11 @@
-import { useState } from 'react';
-import Formulario from './components/Formulario';
-import ListadoCitas from './components/ListadoCitas';
+import './App.css';
+import listadoCitas from "./components/ListadoCitas.js";
+import Formulario from "./components/Formulario.js";
+import React, { useState } from 'react';
 
 function App (){
   const array = [
-    {id:1,mascota:'Morena',duenio:'Brenda',date:'2017-12-31',time:'09:00',sintoms:'Control'}
+    {id:1,mascota:'Morena',duenio:'Brenda',date:'2017-12-31',time:'09:00',sintomas:'Control'}
   ]
   const [listaCitas, setListaCitas] = useState(array);
   const agregarCita = e => {
@@ -18,7 +19,7 @@ function App (){
           duenio:    e.target.duenio.value,
           date:     e.target.fecha.value,
           time:     e.target.hora.value,
-          sintoms:  e.target.sintomas.value
+          sintomas:  e.target.sintomas.value
         }
       ]
   );

@@ -9,7 +9,7 @@ export default function Citas({cita,eliminar} ) {
             <p>Dueño: <span>{cita.duenio}</span></p>
             <p>Fecha: <span>{cita.date}</span></p>
             <p>Hora: <span>{cita.time}</span></p>
-            <p>Sintomas: <span>{cita.sintoms}</span></p>
+            <p>Sintomas: <span>{cita.sintomas}</span></p>
             <button className="button-eliminar u-full-width" onClick={() => eliminar(cita.id)}>Eliminar ×</button>
         </div>
     )

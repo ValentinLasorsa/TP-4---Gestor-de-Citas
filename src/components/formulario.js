@@ -3,9 +3,7 @@ import React, { useState } from 'react';
 export default function Formulario() {
 
   const CrearCita = (e) => {
-
   }
-
   const [cita, setCita] = useState(
     {
       id: 0,

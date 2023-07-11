@@ -1,5 +1,5 @@
 import './App.css';
-import listadoCitas from "./components/ListadoCitas.js";
+import listadoCitas from "./components/listadoCitas.js";
 import Formulario from "./components/Formulario.js";
 import React, { useState } from 'react';
 
@@ -44,7 +44,7 @@ function App (){
           <div className="one-half column">
           <h3>Administra tus citas</h3>
             <div>
-              <listadoCitas listadoCitas={listaCitas} eliminar={eliminarCita}/>
+              <listadoCitas listarCitas={listaCitas} eliminar={eliminarCita}/>
             </div>
           </div>
         </div>

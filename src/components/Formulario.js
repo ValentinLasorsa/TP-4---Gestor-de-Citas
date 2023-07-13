@@ -1,20 +1,6 @@
 import React, { useState } from 'react';
 
 export default function Formulario() {
-
-  const CrearCita = (e) => {
-  }
-  const [cita, setCita] = useState(
-    {
-      id: 0,
-      mascota: '',
-      duenio: '',
-      fecha: '',
-      hora: '',
-      sintomas: ''
-    }
-  );
-
   const [id, setId] = useState(1);
 
   const incrementId = () => {
@@ -26,7 +12,7 @@ export default function Formulario() {
     { id: 3, titulo: 'Nombre dueño', type: 'text', name: 'duenio', placeholder: 'Nombre dueño de la mascota' },
     { id: 4, titulo: 'Fecha', type: 'date', name: 'fecha', placeholder: null },
     { id: 5, titulo: 'Hora', type: 'time', name: 'hora', placeholder: null },
-    { id: 6, titulo: 'Sintomas', type: 'textarea', name: 'sintomas', placeholder: null },
+    { id: 6, titulo: 'Sintomas', type: 'textarea', name: 'sintomas', placeholder: "Síntomas de la mascota" },
   ];
   return (
     <>
